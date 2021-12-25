@@ -6,7 +6,8 @@ RUN echo "$BUILDPLATFORM -> $TARGETPLATFORM" > /log.txt
 COPY * .
 RUN go build -o go-sample .
 
-
 FROM alpine
 COPY --from=build /build/go-sample .
+
+EXPOSE 8080
 CMD ["/go-sample"]

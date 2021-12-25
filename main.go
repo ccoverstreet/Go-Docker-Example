@@ -15,7 +15,7 @@ func main() {
 	router.HandleFunc("/", rootHandler)
 	router.Use(loggingMiddleware)
 
-	http.ListenAndServe("127.0.0.1:8080", router)
+	http.ListenAndServe("0.0.0.0:8080", router)
 }
 
 func loggingMiddleware(next http.Handler) http.Handler {
