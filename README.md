@@ -17,5 +17,5 @@ docker buildx build . -t <whatever>
 ## Running
 
 ```
-docker run -p hostPort:containerPort <more options> imageName
+docker run -p hostPort:containerPort --mount type=bind,source=/path/to/dir,target=/target/dir <more options> imageName
 ```

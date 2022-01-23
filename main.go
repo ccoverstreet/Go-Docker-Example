@@ -20,7 +20,7 @@ func main() {
 
 func loggingMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		log.Printf("\"%s\" requested.", r.URL.Path)
+		log.Printf("\"%s\" requested by %s.", r.URL.Path, r.RemoteAddr)
 		next.ServeHTTP(w, r)
 	})
 }

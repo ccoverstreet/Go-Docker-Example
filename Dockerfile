@@ -8,6 +8,7 @@ RUN go build -o go-sample .
 
 FROM alpine
 COPY --from=build /build/go-sample .
+RUN mkdir -p /data
 
-EXPOSE 8080
+# EXPOSE 8080
 CMD ["/go-sample"]
